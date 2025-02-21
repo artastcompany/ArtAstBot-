@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог людей</title>
+</head>
+<body>
+    <h1>Каталог людей</h1>
+    <ul id="people-list"></ul>
+    <script>
+        const people = [
+            { name: "Алексей", role: "Художник", contact: "@alexey" },
+            { name: "Жаслан", role: "Фотограф", contact: "@jaslan" }
+        ];
+
+        const list = document.getElementById("people-list");
+        people.forEach(person => {
+            const li = document.createElement("li");
+            li.innerHTML = `<strong>${person.name}</strong> — ${person.role} (<a href="https://t.me/${person.contact.slice(1)}">${person.contact}</a>)`;
+            list.appendChild(li);
+        });
+    </script>
+</body>
+</html>
